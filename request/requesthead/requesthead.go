@@ -17,12 +17,12 @@ func AddHeader(originHeader, addHeader *http.Header)  {
 	}
 }
 
-func RequestHeaderForGet(route string, param *util.MapList) *http.Header {
+func RequestHeaderForGet() *http.Header {
 	getHeader := requestHeaderBase()
 	return getHeader
 }
 
-func RequestHeaderForPost(route string, param interface{}) *http.Header {
+func RequestHeaderForPost() *http.Header {
 	postHeader := requestHeaderBase()
 	return postHeader
 }

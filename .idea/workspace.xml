@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32243878-2f45-4a4f-896d-f0ae0ffbea63" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/cons/cons_config.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/cons/cons_errorcode.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/cons/cons_errormsg.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/entity/response/base.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/util/maplist/maplist.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/util/util.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/util/util_maplist.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gorequest.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gorequest_callback.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gorequest_entity.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gorequest_test.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/initialize/initialize.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/apirequest/apirequest.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/apirequest/apirequest_handle.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/apirequest/apirequest_log.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/apirequest/apirequest_test.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/apirequest/cons/cons_error.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/apirequest/cons/cons_error_msg.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/apirequest/entity/request.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/apirequest/entity/response.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/apirequest/threadpool/threadPool.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/apirequest/threadpool/threadPool_test.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/request/requesthead/requesthead.go" />
+      <change beforePath="$PROJECT_DIR$/gorequest.go" afterPath="$PROJECT_DIR$/gorequest.go" />
+      <change beforePath="$PROJECT_DIR$/gorequest_entity.go" afterPath="$PROJECT_DIR$/gorequest_entity.go" />
+      <change beforePath="$PROJECT_DIR$/request/requesthead/requesthead.go" afterPath="$PROJECT_DIR$/request/requesthead/requesthead.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/request/requesthead/requesthead.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
-              <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding>
                 <element signature="e#21#68#0" expanded="true" />
               </folding>
@@ -48,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gorequest.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gorequest.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gorequest.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="61" column="45" lean-forward="false" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+            <state relative-caret-position="299">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="e#19#229#0" expanded="true" />
               </folding>
@@ -60,11 +39,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="util_maplist.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gorequest_entity.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gorequest_entity.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util_maplist.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/util/util_maplist.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="121" column="41" lean-forward="true" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
+            <state relative-caret-position="426">
+              <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -83,8 +72,8 @@
       <file leaf-file-name="gorequest_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gorequest_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="33" column="50" lean-forward="false" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+            <state relative-caret-position="417">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#19#96#0" expanded="true" />
               </folding>
@@ -161,15 +150,15 @@
         <option value="$PROJECT_DIR$/common/cons/cons_errorcode.go" />
         <option value="$PROJECT_DIR$/common/cons/cons_errormsg.go" />
         <option value="$PROJECT_DIR$/common/util/maplist/maplist.go" />
-        <option value="$PROJECT_DIR$/request/requesthead/requesthead.go" />
         <option value="$PROJECT_DIR$/gorequest_callback.go" />
-        <option value="$PROJECT_DIR$/gorequest_entity.go" />
         <option value="$PROJECT_DIR$/request/apirequest/threadpool/threadPool.go" />
         <option value="$PROJECT_DIR$/request/apirequest/apirequest.go" />
-        <option value="$PROJECT_DIR$/gorequest.go" />
         <option value="$PROJECT_DIR$/gorequest_test.go" />
         <option value="$PROJECT_DIR$/common/util/util.go" />
         <option value="$PROJECT_DIR$/common/util/util_maplist.go" />
+        <option value="$PROJECT_DIR$/gorequest_entity.go" />
+        <option value="$PROJECT_DIR$/request/requesthead/requesthead.go" />
+        <option value="$PROJECT_DIR$/gorequest.go" />
       </list>
     </option>
   </component>
@@ -386,7 +375,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559810695593</updated>
-      <workItem from="1559810696957" duration="5176000" />
+      <workItem from="1559810696957" duration="5339000" />
     </task>
     <servers />
   </component>
@@ -423,17 +412,16 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5176000" />
+    <option name="totallyTimeSpent" value="5339000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="989" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -582,14 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gorequest_entity.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../mykeysdk/common/cons/cons_api_header.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -642,36 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/request/requesthead/requesthead.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#21#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gorequest_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="33" column="50" lean-forward="false" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-          <folding>
-            <element signature="e#19#96#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gorequest.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="61" column="45" lean-forward="false" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
-          <folding>
-            <element signature="e#19#229#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/strconv/ftoa.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -690,9 +640,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common/util/util_maplist.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="121" column="41" lean-forward="true" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
+        <state relative-caret-position="426">
+          <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gorequest_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#19#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gorequest_entity.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/request/requesthead/requesthead.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <element signature="e#21#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gorequest.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#19#229#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -26,10 +26,16 @@ func GetRequest(route string, paramJson string, requestCallBack ApiRequestCallBa
 	log.Println("in GetRequest")
 	defer catchError(&result)
 	paramMapList := getGetParam(paramJson)
-	header := requesthead.RequestHeaderForGet(route, paramMapList)
 	realGetParam := getGetRealParam(paramMapList)
+	header := requesthead.RequestHeaderForGet()
 	initService.GetApiRequest().Get(route + realGetParam, header, requestCallBack)
 	return response.NewBaseResponse(cons.ResponseCodeSuccess, "", nil).ToJson()
+}
+
+func PostRequest(route string, paramJson string, requestCallBack ApiRequestCallBack) (result string) {
+	log.Println("in PostRequest")
+	defer catchError(&result)
+
 }
 
 func getParam(paramJson string) map[string] interface{} {
