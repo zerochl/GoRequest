@@ -18,6 +18,7 @@ var (
 func InitRequest(initRequestEntity *InitRequestEntity) (result string) {
 	log.Println("in InitRequest")
 	defer catchError(&result)
+	initConsValue(initRequestEntity)
 	initService = initialize.Init(initRequestEntity.BaseUrl, initRequestEntity.HeaderJson)
 	return response.NewBaseResponse(cons.ResponseCodeSuccess, "", nil).ToJson()
 }
@@ -83,4 +84,19 @@ func getPostRealParam(paramJson string) map[string] interface{} {
 		return nil
 	}
 	return realPostParam
+}
+
+func initConsValue(initRequestEntity *InitRequestEntity)  {
+	if 0 != initRequestEntity.PoolMaxIdel {
+		cons.RequestPoolMaxIdle = initRequestEntity.PoolMaxIdel
+	}
+	if 0 != initRequestEntity.PoolCore {
+		cons.RequestPoolKeepAlive = initRequestEntity.PoolCore
+	}
+	if 0 != initRequestEntity.RequestTimeOut {
+		cons.RequestTimeOut = initRequestEntity.RequestTimeOut
+	}
+	if 0 != initRequestEntity.RequestKeepAlive {
+		cons.RequestKeepAlive = initRequestEntity.RequestKeepAlive
+	}
 }

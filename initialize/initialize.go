@@ -15,6 +15,7 @@ func Init(baseUrl, headJson string) *InitService {
 	initService := &InitService{}
 	header := make(http.Header)
 	requesthead.AddInputHead(headJson, &header)
+
 	initService.apiRequest = apirequest.NewApiRequest(cons.RequestPoolMaxIdle, cons.RequestPoolKeepAlive, cons.RequestTimeOut, cons.RequestKeepAlive, baseUrl, &header)
 	return initService
 }

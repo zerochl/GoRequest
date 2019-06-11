@@ -22,7 +22,7 @@ func (apiRequest *ApiRequest) outputRequestLog(req *http.Request)  {
 	if req.Form != nil {
 		log.Println(req.Form.Encode())
 	}
-	log.Println("req:", req.URL.Query())
+	//log.Println("req:", req.URL.Query())
 	//// 未解决body读取之后导致不能再次读取的问题
 	//if nil != req.Body {
 	//	buff := new(bytes.Buffer)

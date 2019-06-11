@@ -1,6 +1,6 @@
 package cons
 
-const (
+var (
 	RequestPoolMaxIdle = 100
 	RequestPoolKeepAlive = 2
 	RequestTimeOut = 30
