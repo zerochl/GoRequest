@@ -1,4 +1,4 @@
-# GoRequest(专为Android与IOS提供的网络请求框架)
+# GoRequest(专为Android与IOS提供的跨平台网络请求框架)
 An android-ios-based network request framework implemented by golang
 # 实现框架的初衷
 1. 4.4一下的android机型不支持TLS1.2版本的部分加解密算法，导致无法使用https协议访问接口，使用java也能解决此问题，只是资料太少，耗时过多。
