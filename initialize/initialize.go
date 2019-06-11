@@ -11,10 +11,11 @@ type InitService struct {
 	apiRequest *apirequest.ApiRequest
 }
 
-func Init(baseUrl string) *InitService {
+func Init(baseUrl, headJson string) *InitService {
 	initService := &InitService{}
-	requesthead.Header = make(http.Header)
-	initService.apiRequest = apirequest.NewApiRequest(cons.RequestPoolMaxIdle, cons.RequestPoolKeepAlive, cons.RequestTimeOut, cons.RequestKeepAlive, baseUrl)
+	header := make(http.Header)
+	requesthead.AddInputHead(headJson, &header)
+	initService.apiRequest = apirequest.NewApiRequest(cons.RequestPoolMaxIdle, cons.RequestPoolKeepAlive, cons.RequestTimeOut, cons.RequestKeepAlive, baseUrl, &header)
 	return initService
 }
 

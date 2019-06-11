@@ -28,7 +28,7 @@ type RequestCallback interface {
 	OnError(errorCode int, errorMsg string)
 }
 
-func NewApiRequest(poolMaxIdle, poolKeepAlive, requestTimeOut, requestKeepAlive int, baseUrl string) *ApiRequest {
+func NewApiRequest(poolMaxIdle, poolKeepAlive, requestTimeOut, requestKeepAlive int, baseUrl string, header *http.Header) *ApiRequest {
 	dialer := &net.Dialer{
 		Timeout:   time.Duration(requestTimeOut) * time.Second,
 		KeepAlive: time.Duration(requestKeepAlive) * time.Second,
@@ -42,22 +42,12 @@ func NewApiRequest(poolMaxIdle, poolKeepAlive, requestTimeOut, requestKeepAlive 
 		Transport: transport,
 	}
 
-	baseHeader := make(http.Header)
-	//baseHeader.Set(configCons.ContentTypeKey, configCons.ContentType)
-	//baseHeader.Set(configCons.UserAgentKey, configCons.UserAgent)
-	//baseHeader.Set(configCons.DeviceKey, configCons.Device)
-	//baseHeader.Set(configCons.SdkVersionKey, configCons.SdkVersion)
-	//baseHeader.Set(configCons.SdkJniVersionKey, configCons.SdkJniVersion)
-	//baseHeader.Set(configCons.UuidKey, configCons.Uuid)
-	//baseHeader.Set(configCons.PhoneModeKey, configCons.PhoneMode)
-	//baseHeader.Set(configCons.PhoneOsKey, configCons.PhoneOs)
-
 	return &ApiRequest{
 		requestClient:     requestClient,
 		retryCount:        3,
 		retryIntervalTime: 5,
 		baseUrl:           baseUrl,
-		header:            &baseHeader,
+		header:            header,
 		threadPool:        threadpool.NewThreadPool(poolMaxIdle, poolKeepAlive),
 	}
 }

@@ -18,7 +18,7 @@ var (
 func InitRequest(initRequestEntity *InitRequestEntity) (result string) {
 	log.Println("in InitRequest")
 	defer catchError(&result)
-	initService = initialize.Init(initRequestEntity.BaseUrl)
+	initService = initialize.Init(initRequestEntity.BaseUrl, initRequestEntity.HeaderJson)
 	return response.NewBaseResponse(cons.ResponseCodeSuccess, "", nil).ToJson()
 }
 

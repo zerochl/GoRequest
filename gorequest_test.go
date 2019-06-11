@@ -10,6 +10,7 @@ import (
 func initRequest() {
 	initRequestEntity := &InitRequestEntity{
 		BaseUrl: "http://172.16.11.229:8086/",
+		HeaderJson: "{\"BaseHeader1\": \"1233\",\"BaseHeader2\":\"value2\"}",
 	}
 	InitRequest(initRequestEntity)
 }

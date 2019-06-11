@@ -5,10 +5,6 @@ import (
 	"encoding/json"
 )
 
-var (
-	Header http.Header
-)
-
 func AddHeader(originHeader, addHeader *http.Header) {
 	for key, headerItem := range *addHeader {
 		for _, headerItemItem := range headerItem {
@@ -19,24 +15,20 @@ func AddHeader(originHeader, addHeader *http.Header) {
 
 func RequestHeaderForGet(inputHeadJson string) *http.Header {
 	getHeader := requestHeaderBase()
-	return addInputHead(inputHeadJson, getHeader)
+	return AddInputHead(inputHeadJson, getHeader)
 }
 
 func RequestHeaderForPost(inputHeadJson string) *http.Header {
 	postHeader := requestHeaderBase()
-	return addInputHead(inputHeadJson, postHeader)
+	return AddInputHead(inputHeadJson, postHeader)
 }
 
 func requestHeaderBase() *http.Header {
 	baseHeader := make(http.Header)
-	//baseHeader.Set(Header_Key_App_Key, cons.AppKey)
-	//baseHeader.Set(Header_Key_User_Id, cons.UserId)
-	//baseHeader.Set(Header_Key_Timestamp, date.GetTimestamp())
-	//baseHeader.Set(Header_Key_Nonce, util.GetNonce())
 	return &baseHeader
 }
 
-func addInputHead(inputHeadJson string, header *http.Header) *http.Header {
+func AddInputHead(inputHeadJson string, header *http.Header) *http.Header {
 	if inputHeadJson == "" {
 		return header
 	}
