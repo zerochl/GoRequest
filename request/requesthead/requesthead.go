@@ -2,14 +2,14 @@ package requesthead
 
 import (
 	"net/http"
-	"GoRequest/common/util"
+	"encoding/json"
 )
 
 var (
 	Header http.Header
 )
 
-func AddHeader(originHeader, addHeader *http.Header)  {
+func AddHeader(originHeader, addHeader *http.Header) {
 	for key, headerItem := range *addHeader {
 		for _, headerItemItem := range headerItem {
 			originHeader.Set(key, headerItemItem)
@@ -17,14 +17,14 @@ func AddHeader(originHeader, addHeader *http.Header)  {
 	}
 }
 
-func RequestHeaderForGet() *http.Header {
+func RequestHeaderForGet(inputHeadJson string) *http.Header {
 	getHeader := requestHeaderBase()
-	return getHeader
+	return addInputHead(inputHeadJson, getHeader)
 }
 
-func RequestHeaderForPost() *http.Header {
+func RequestHeaderForPost(inputHeadJson string) *http.Header {
 	postHeader := requestHeaderBase()
-	return postHeader
+	return addInputHead(inputHeadJson, postHeader)
 }
 
 func requestHeaderBase() *http.Header {
@@ -34,4 +34,19 @@ func requestHeaderBase() *http.Header {
 	//baseHeader.Set(Header_Key_Timestamp, date.GetTimestamp())
 	//baseHeader.Set(Header_Key_Nonce, util.GetNonce())
 	return &baseHeader
+}
+
+func addInputHead(inputHeadJson string, header *http.Header) *http.Header {
+	if inputHeadJson == "" {
+		return header
+	}
+	var inputHeaderMap map[string]string
+	err := json.Unmarshal([]byte(inputHeadJson), &inputHeaderMap)
+	if err != nil {
+		return header
+	}
+	for key, value := range inputHeaderMap {
+		header.Set(key, value)
+	}
+	return header
 }

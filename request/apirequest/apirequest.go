@@ -72,7 +72,7 @@ func (apiRequest *ApiRequest) Get(route string, header *http.Header, requestCall
 }
 
 func (apiRequest *ApiRequest) prepareRequest(method, url string, body io.Reader, header *http.Header, requestCallBack RequestCallback)  {
-	apiRequest.threadPool.AddTaskBlock(func() error {
+	apiRequest.threadPool.AddTask(func() error {
 		log.Println("in thread")
 		newRequest, err := http.NewRequest(method, url, body)
 		if err != nil {

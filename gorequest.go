@@ -21,21 +21,24 @@ func InitRequest(initRequestEntity *InitRequestEntity) (result string) {
 	initService = initialize.Init(initRequestEntity.BaseUrl)
 	return response.NewBaseResponse(cons.ResponseCodeSuccess, "", nil).ToJson()
 }
-// param json格式
-func GetRequest(route string, paramJson string, requestCallBack ApiRequestCallBack) (result string) {
+
+func GetRequest(route string, paramJson string, headerJson string, requestCallBack ApiRequestCallBack) (result string) {
 	log.Println("in GetRequest")
 	defer catchError(&result)
 	paramMapList := getGetParam(paramJson)
 	realGetParam := getGetRealParam(paramMapList)
-	header := requesthead.RequestHeaderForGet()
+	header := requesthead.RequestHeaderForGet(headerJson)
 	initService.GetApiRequest().Get(route + realGetParam, header, requestCallBack)
 	return response.NewBaseResponse(cons.ResponseCodeSuccess, "", nil).ToJson()
 }
 
-func PostRequest(route string, paramJson string, requestCallBack ApiRequestCallBack) (result string) {
+func PostRequest(route string, paramJson string, headerJson string, requestCallBack ApiRequestCallBack) (result string) {
 	log.Println("in PostRequest")
 	defer catchError(&result)
-
+	realPostParam := getPostRealParam(paramJson)
+	header := requesthead.RequestHeaderForPost(headerJson)
+	initService.GetApiRequest().Post(route, realPostParam, header, requestCallBack)
+	return response.NewBaseResponse(cons.ResponseCodeSuccess, "", nil).ToJson()
 }
 
 func getParam(paramJson string) map[string] interface{} {
@@ -68,4 +71,16 @@ func getGetRealParam(paramMapList *util.MapList) string {
 		realGetParam = paramMapList.GetRequestParam()
 	}
 	return realGetParam
+}
+
+func getPostRealParam(paramJson string) map[string] interface{} {
+	if paramJson == "" {
+		return nil
+	}
+	var realPostParam  map[string] interface{}
+	err := json.Unmarshal([]byte(paramJson), &realPostParam)
+	if err != nil {
+		return nil
+	}
+	return realPostParam
 }
