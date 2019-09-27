@@ -56,6 +56,10 @@ func (apiRequest *ApiRequest) Post(route string, param interface{}, header *http
 	apiRequest.prepareRequest(http.MethodPost, apiRequest.baseUrl+route, paramToBody(param), header, requestCallBack)
 }
 
+func (apiRequest *ApiRequest) PostWithRes(route string, param interface{}, header *http.Header, requestCallBack RequestCallback, res interface{}) {
+	apiRequest.prepareRequestWithRes(http.MethodPost, apiRequest.baseUrl+route, paramToBody(param), header, requestCallBack, res)
+}
+
 func (apiRequest *ApiRequest) Get(route string, header *http.Header, requestCallBack RequestCallback) {
 	log.Println("apiRequest.baseUrl+route:", apiRequest.baseUrl+route)
 	apiRequest.prepareRequest(http.MethodGet, apiRequest.baseUrl+route, nil, header, requestCallBack)
@@ -87,6 +91,35 @@ func (apiRequest *ApiRequest) prepareRequest(method, url string, body io.Reader,
 			// 服务端返回异常
 			requestCallBack.OnError(res.Code, res.Message)
 			return nil
+		}
+		dataJsonByte, err := json.Marshal(res)
+		if err != nil {
+			requestCallBack.OnError(cons.ErrorCodeRequestReadException, err.Error())
+			return nil
+		}
+		requestCallBack.OnSuccess(string(dataJsonByte))
+		return nil
+	})
+}
+
+func (apiRequest *ApiRequest) prepareRequestWithRes(method, url string, body io.Reader, header *http.Header, requestCallBack RequestCallback, res interface{})  {
+	apiRequest.threadPool.AddTask(func() error {
+		log.Println("in thread")
+		newRequest, err := http.NewRequest(method, url, body)
+		if err != nil {
+			requestCallBack.OnError(cons.ErrorCodeRequestNew, err.Error())
+			return err
+		}
+		// 设置请求头
+		newRequest.Header = make(http.Header)
+		requesthead.AddHeader(&newRequest.Header, apiRequest.header)
+		requesthead.AddHeader(&newRequest.Header, header)
+		// 执行网络请求
+		errorCode, err := apiRequest.tryRequest(newRequest, res)
+		if err != nil {
+			// 请求异常
+			requestCallBack.OnError(errorCode, err.Error())
+			return err
 		}
 		dataJsonByte, err := json.Marshal(res)
 		if err != nil {

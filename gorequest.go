@@ -42,6 +42,15 @@ func PostRequest(route string, paramJson string, headerJson string, requestCallB
 	return response.NewBaseResponse(cons.ResponseCodeSuccess, "", nil).ToJson()
 }
 
+func PostRequestWithRes(route string, paramJson string, headerJson string, requestCallBack ApiRequestCallBack, res interface{}) (result string) {
+	log.Println("in PostRequest")
+	defer catchError(&result)
+	realPostParam := getPostRealParam(paramJson)
+	header := requesthead.RequestHeaderForPost(headerJson)
+	initService.GetApiRequest().PostWithRes(route, realPostParam, header, requestCallBack, res)
+	return response.NewBaseResponse(cons.ResponseCodeSuccess, "", nil).ToJson()
+}
+
 func getParam(paramJson string) map[string] interface{} {
 	if paramJson == "" {
 		return nil

@@ -50,7 +50,7 @@ func (apiRequest *ApiRequest) request(req *http.Request, res interface{}) (error
 	}
 	apiRequest.outputResponseLog(bodyBytes, http.StatusOK)
 	if res != nil {
-		json.Unmarshal(bodyBytes, &res)
+		err = json.Unmarshal(bodyBytes, &res)
 		if err != nil {
 			log.Println("cannot json unmarshal response:", string(bodyBytes), ";err:", err.Error())
 			return cons.ErrorCodeRequestJsonException, err
