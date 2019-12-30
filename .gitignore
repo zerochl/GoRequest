@@ -1,0 +1,12 @@
+/build
+*.iml
+/captures
+/.gradle
+/.idea
+local.properties
+**/*.iml
+**/*.DS_Store
+**/.DS_Store
+**/build
+**/report
+**/bh_assign

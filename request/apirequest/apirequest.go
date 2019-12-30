@@ -80,7 +80,7 @@ func (apiRequest *ApiRequest) prepareRequest(method, url string, body io.Reader,
 		// 创建response接收对象
 		res := &entity.RootResponse{}
 		// 执行网络请求
-		errorCode, err := apiRequest.tryRequest(newRequest, res)
+		errorCode, err, _ := apiRequest.tryRequest(newRequest, res)
 		if err != nil {
 			// 请求异常
 			requestCallBack.OnError(errorCode, err.Error())
@@ -115,11 +115,15 @@ func (apiRequest *ApiRequest) prepareRequestWithRes(method, url string, body io.
 		requesthead.AddHeader(&newRequest.Header, apiRequest.header)
 		requesthead.AddHeader(&newRequest.Header, header)
 		// 执行网络请求
-		errorCode, err := apiRequest.tryRequest(newRequest, res)
-		if err != nil {
+		errorCode, err, response := apiRequest.tryRequest(newRequest, res)
+		if err != nil && response == "" {
 			// 请求异常
 			requestCallBack.OnError(errorCode, err.Error())
 			return err
+		}
+		if err != nil && response != "" {
+			requestCallBack.OnSuccess(response)
+			return nil
 		}
 		dataJsonByte, err := json.Marshal(res)
 		if err != nil {
