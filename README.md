@@ -13,5 +13,4 @@ An android-ios-based network request framework implemented by golang
 2. cd到go src目录下，执行Android命令：gomobile bind -target=android GoRequest;IOS命令：gomobile bind -target=ios GoRequest;会生成GoRequest.aar和GoRequest.framework文件，对应移动端开发就知道怎么引入到项目中了
 3. 想试试效果，可以在test文件中替换请求的baseurl、route与header，然后执行看看效果。
 
-### 作者联系方式：QQ：975804495
 ### 疯狂的程序员群：186305789，没准你能遇到绝影大神
